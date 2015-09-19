@@ -1,0 +1,75 @@
+<html prefix="og: http://ogp.me/ns#">
+<head>
+	<title>LA Summer Events Preview</title>
+
+
+	<meta property="og:image" 	    content="http://dailybruin.com/images/2015/06/fb_share_summer_la.jpg" />
+	<meta property="og:description" content="Daily Bruin presents a slew of local happenings for students staying during summer sessions and looking for fun ways to cool off and relax." />
+	<meta property="og:url" content="http://graphics.dailybruin.com/gradissue-2015/summer-la/" />
+	<meta property="og:title" content="LA Summer Preview 2015" />
+
+	<meta name="viewport" content="user-scalable=no" />
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Raleway:200' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" type="image/png" href="favicon.png" />
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/handlebars-v3.0.3.js"></script>
+	<script src="js/map.js"></script>
+	<script src="js/dataloader.js"></script>
+
+</head>
+<body>
+
+	<div id="googlemaps"></div>
+	<div id="nav">
+		<a href="http://www.dailybruin.com">
+			<img src="http://dailybruin.com/images/2015/05/db_logo_B.png" id="dblogo">
+		</a>
+
+		<h2>Here to Stay</h2>		
+		<!-- change potato to url -->
+		<ul class="share-buttons" id="social-buttons">
+			<li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fpotato&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL), '_blank', 'height=500,width=500,toolbar=0,location=0,menubar=0'); return false;"><img src="http://dailybruin.com/images/2015/05/Facebook.png"></a></li>
+			<li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fpotato&text=:%20http%3A%2F%2Fpotato" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL), '_blank', 'height=500,width=500,toolbar=0,location=0,menubar=0'); return false;"><img src="http://dailybruin.com/images/2015/05/Twitter.png"></a></li>
+			<li><a href="http://www.tumblr.com/share?v=3&u=http%3A%2F%2Fpotato&t=&s=" target="_blank" title="Post to Tumblr" onclick="window.open('http://www.tumblr.com/share?v=3&u=' + encodeURIComponent(document.URL) + '&t=' +  encodeURIComponent(document.title), '_blank', 'height=500,width=500,toolbar=0,location=0,menubar=0'); return false;"><img src="http://dailybruin.com/images/2015/05/Tumblr.png"></a></li>
+			<li><a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fpotato&description=" target="_blank" title="Pin it" onclick="window.open('http://pinterest.com/pin/create/button/?url=' + encodeURIComponent(document.URL) + '&description=' +  encodeURIComponent(document.title), '_blank', 'height=500,width=500,toolbar=0,location=0,menubar=0'); return false;"><img src="http://dailybruin.com/images/2015/05/Pinterest.png"></a></li>
+		</ul>
+	</div>
+	<div id="content">
+		<div class="card" style="border-top: 6pt solid #c0392b">
+			<p id="intro">Sixteen Westwood Village businesses have maintained a presence for more than 50 years. Business owners said store histories, on-site owners and one-of-a-kind retail items were their key to success in the Village.</p>
+			<p id="intro">Edwin and Harold Janss planned to include local shops when they built the Village in 1929, said Steve Sann, chair of the Westwood Community Council. He said the Janss brothers wanted to create a place for students as well as for other residents, so they brought both mom-and-pop shops and chain stores to the community.</p>
+			<p id="intro">Clinton Schudy, owner of Oakley&#39;s Barber Shop, said businesses that have been in Westwood for over 50 years can be role models for other current and future businesses.</p>
+			<p id="intro">&#34;These businesses were the backbone that helped form Westwood Village,&#34; Schudy said.</p>
+			<p id="intro">He said he thinks the Village should include a mix of franchised and local stores so customers want to come back and visit again, rather than take the same approach as The Grove or Third Street Promenade and become the typical mall.</p>
+		</div>
+
+		<script id="card-template" type="text/x-handlebars-template">
+			{{#each apidata}}
+			<div class="card" id="card-{{@index}}" style="border-top: 6pt solid #c0392b">
+				<p class="card-title">{{title}}</p>
+				<div class="card-img" style="background-image: url('{{photolink}}');">
+					
+				</div>
+				<div class="card-description">
+					{{{formatBodyText description}}}
+				</div>
+			</div>
+			{{/each}}
+		</script>
+	</div>
+
+	<div id="content-credit">
+		<div class="card">
+			<p id="conclusion">
+			Page created by: <a href="mailto:vkashyap@media.ucla.edu">Julien Brundrett</a>, <a href="mailto:vkashyap@media.ucla.edu">Vipul Kashyap</a>, <a href="mailto:icordero@media.ucla.edu">Ian Cordero</a>, <a href="mailto:ctruong@media.ucla.edu">Catherine Truong</a>, and <a href="mailto:kfchen@media.ucla.edu">Frank Chen</a>.<br>
+			&copy; 2015 The Daily Bruin
+			</p>
+		</div>
+	</div>
+
+</body>
+</html>
